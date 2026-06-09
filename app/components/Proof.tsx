@@ -282,11 +282,6 @@ export default function Proof() {
                   <p className="font-serif text-xl md:text-2xl tracking-[-0.015em] group-hover:underline underline-offset-4 decoration-[var(--border)] group-hover:decoration-foreground transition-colors">
                     {c.brand}
                   </p>
-                  {c.status === "CURRENT" && (
-                    <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2 py-0.5">
-                      Current
-                    </span>
-                  )}
                 </div>
                 <p className="md:col-span-6 text-base md:text-lg text-foreground/80">
                   {c.result}
