@@ -1,4 +1,4 @@
-import Link from "next/link";
+import ServiceCard from "./ServiceCard";
 
 const SERVICES = [
   {
@@ -112,90 +112,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] rounded-2xl overflow-hidden">
           {SERVICES.map((s) => (
-            <article
-              key={s.code}
-              className="svc-card group bg-background relative overflow-hidden"
-            >
-              <div
-                className={`aspect-[5/4] bg-gradient-to-br ${s.tone} relative overflow-hidden`}
-              >
-                <div
-                  className={`absolute inset-0 ${
-                    s.invert
-                      ? "bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.08),transparent_60%)]"
-                      : "bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.6),transparent_60%)]"
-                  }`}
-                />
-                <div className="absolute top-5 left-5 flex items-center gap-2">
-                  <span
-                    className={`font-mono text-[11px] ${
-                      s.invert ? "text-background/70" : "text-foreground/70"
-                    }`}
-                  >
-                    {s.code}
-                  </span>
-                  <span
-                    className={`font-mono text-[11px] ${
-                      s.invert ? "text-background/40" : "text-foreground/40"
-                    }`}
-                  >
-                    / {s.tag}
-                  </span>
-                </div>
-                <div
-                  className="absolute inset-0 flex items-center justify-center"
-                  aria-hidden
-                >
-                  <div
-                    className={`w-24 h-24 lg:w-28 lg:h-28 ${
-                      s.invert ? "bg-background/90" : "bg-foreground/85"
-                    }`}
-                    style={{
-                      WebkitMaskImage: `url('${s.icon}')`,
-                      maskImage: `url('${s.icon}')`,
-                      WebkitMaskRepeat: "no-repeat",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskPosition: "center",
-                      maskPosition: "center",
-                      WebkitMaskSize: "contain",
-                      maskSize: "contain",
-                    }}
-                  />
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-7">
-                  <p
-                    className={`font-serif uppercase text-4xl lg:text-5xl tracking-[-0.02em] ${
-                      s.invert ? "text-background/95" : "text-foreground/90"
-                    }`}
-                  >
-                    {s.name}
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-6 lg:p-8">
-                <p className="text-foreground/85 leading-relaxed">{s.blurb}</p>
-                <ul className="mt-5 grid gap-1.5">
-                  {s.bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="flex items-baseline gap-2 text-sm text-muted"
-                    >
-                      <span className="font-mono text-[10px]">→</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={`/services/${s.slug}`}
-                  className="mt-6 inline-flex items-center gap-2 text-sm hover-underline"
-                >
-                  Explore service
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </article>
+            <ServiceCard key={s.code} s={s} />
           ))}
         </div>
 
