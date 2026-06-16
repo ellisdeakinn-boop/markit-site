@@ -31,6 +31,7 @@ export default function Hero() {
       </video>
 
       <div className="absolute inset-0 bg-[var(--brand-blue)]/30 mix-blend-multiply pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[var(--brand-blue)]/85 via-[var(--brand-blue)]/35 to-transparent pointer-events-none" />
 
 
       <div className="relative z-10 h-full flex flex-col">
