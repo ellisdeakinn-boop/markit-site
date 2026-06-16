@@ -46,10 +46,7 @@ export default function Founders() {
           <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border)] border border-[var(--border)] rounded-2xl overflow-hidden">
             {FOUNDERS.map((f) => (
               <article key={f.name} className="bg-background p-8 lg:p-10">
-                <div
-                  className="aspect-square rounded-xl flex items-center justify-center mb-6 relative overflow-hidden"
-                  style={{ background: "var(--brand-gradient)" }}
-                >
+                <div className="aspect-square rounded-xl flex items-center justify-center mb-6 relative overflow-hidden bg-[var(--brand-blue)]">
                   {f.photo ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img

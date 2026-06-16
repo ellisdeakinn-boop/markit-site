@@ -226,7 +226,7 @@ export default function Proof() {
                   <div
                     role="img"
                     aria-label={p.name}
-                    className="w-full h-20 md:h-24 lg:h-28 bg-foreground opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    className="w-full h-20 md:h-24 lg:h-28 bg-foreground group-hover:bg-[var(--brand-blue)] transition-colors duration-300"
                     style={{
                       WebkitMaskImage: `url('${p.logo}')`,
                       maskImage: `url('${p.logo}')`,
@@ -258,7 +258,7 @@ export default function Proof() {
                   title={p.name}
                 >
                   {inner}
-                  <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-muted opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--brand-blue)] opacity-0 group-hover:opacity-100 transition-opacity">
                     {p.name} →
                   </span>
                 </Link>
@@ -282,11 +282,11 @@ export default function Proof() {
             const Inner = (
               <>
                 <div className="md:col-span-4 flex items-baseline gap-3 flex-wrap">
-                  <p className="font-serif text-xl md:text-2xl tracking-[-0.015em] group-hover:underline underline-offset-4 decoration-[var(--border)] group-hover:decoration-foreground transition-colors">
+                  <p className="font-serif text-xl md:text-2xl tracking-[-0.015em] transition-colors group-hover:text-[var(--brand-blue)]">
                     {c.brand}
                   </p>
                   {c.status === "CURRENT" && (
-                    <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2 py-0.5">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-white bg-[var(--brand-blue)] rounded-full px-2 py-0.5">
                       Current
                     </span>
                   )}
@@ -309,7 +309,7 @@ export default function Proof() {
               <Link
                 key={c.brand}
                 href={`/work/${c.slug}`}
-                className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 border-b border-[var(--border)] items-baseline hover:bg-foreground/[0.02] transition-colors"
+                className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 border-b border-[var(--border)] items-baseline hover:bg-[var(--brand-blue)]/[0.06] transition-colors"
               >
                 {Inner}
               </Link>

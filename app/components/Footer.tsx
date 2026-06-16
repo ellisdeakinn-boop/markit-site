@@ -65,7 +65,7 @@ export default function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="hover-underline"
+                    className="transition-colors hover:text-[var(--brand-blue)]"
                   >
                     {s.label}
                   </Link>
@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {WORK_LINKS.map((w) => (
                 <li key={w.slug}>
-                  <Link href={`/work/${w.slug}`} className="hover-underline">
+                  <Link href={`/work/${w.slug}`} className="transition-colors hover:text-[var(--brand-blue)]">
                     {w.label}
                   </Link>
                 </li>
@@ -96,7 +96,7 @@ export default function Footer() {
                     href={f.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover-underline"
+                    className="transition-colors hover:text-[var(--brand-blue)]"
                   >
                     {f.name}
                   </a>

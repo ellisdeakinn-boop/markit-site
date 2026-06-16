@@ -71,16 +71,22 @@ export default function Header() {
               <a
                 key={item.num}
                 href={item.href}
-                className="flex items-baseline gap-1.5 group"
+                className={`flex items-baseline gap-1.5 group transition-colors ${
+                  onLight
+                    ? "hover:text-[var(--brand-blue)]"
+                    : "hover:text-[var(--brand-lime)]"
+                }`}
               >
                 <span
-                  className={`font-mono text-[10px] ${
-                    onLight ? "text-muted" : "text-white/60"
+                  className={`font-mono text-[10px] transition-colors ${
+                    onLight
+                      ? "text-muted group-hover:text-[var(--brand-blue)]"
+                      : "text-white/60 group-hover:text-[var(--brand-lime)]"
                   }`}
                 >
                   {item.num}
                 </span>
-                <span className="text-sm hover-underline">{item.label}</span>
+                <span className="text-sm">{item.label}</span>
               </a>
             ))}
           </nav>

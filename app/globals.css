@@ -6,18 +6,12 @@
   --muted: #6b6b6b;
   --border: #e5e8ea;
 
-  /* Markit brand */
+  /* Markit brand (flat only — no gradients) */
   --brand-blue: #0074ff;
   --brand-sky: #40bbff;
   --brand-lime: #6eff3e;
   --brand-ink: #000000;
   --brand-fog: #e5e8ea;
-  --brand-gradient: linear-gradient(
-    120deg,
-    var(--brand-lime) 0%,
-    var(--brand-sky) 50%,
-    var(--brand-blue) 100%
-  );
 }
 
 @theme inline {

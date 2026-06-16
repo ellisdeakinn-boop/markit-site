@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 const SERVICES = [
   {
@@ -14,8 +17,9 @@ const SERVICES = [
       "Google when it fits",
       "Creative + media in one team",
     ],
-    tone: "from-[#0074ff] to-[#005ce0]",
+    bg: "#0074ff",
     invert: true,
+    hoverBg: "#000000",
   },
   {
     slug: "website-builds",
@@ -30,8 +34,9 @@ const SERVICES = [
       "Conversion-built funnels & VSLs",
       "SEO and performance baked in",
     ],
-    tone: "from-[#40bbff] to-[#0074ff]",
+    bg: "#40bbff",
     invert: true,
+    hoverBg: "#0074ff",
   },
   {
     slug: "video-production",
@@ -46,7 +51,10 @@ const SERVICES = [
       "On-location & in-studio shoots",
       "In-house edit team",
     ],
-    tone: "from-[#6eff3e] to-[#40bbff]",
+    bg: "#6eff3e",
+    invert: false,
+    hoverBg: "#000000",
+    hoverInvert: true,
   },
   {
     slug: "lead-generation",
@@ -61,8 +69,9 @@ const SERVICES = [
       "Reputation & reviews",
       "Missed-call follow-up & AI receptionist",
     ],
-    tone: "from-[#0a0a0a] to-[#000000]",
+    bg: "#000000",
     invert: true,
+    hoverBg: "#0074ff",
   },
   {
     slug: "copywriting",
@@ -73,7 +82,9 @@ const SERVICES = [
     blurb:
       "Direct-response copy with taste. Landing pages, ad scripts, emails, and SMS sequences engineered to move booked calls and walk-ins.",
     bullets: ["Landing pages", "Email & SMS", "Ad scripts"],
-    tone: "from-[#e5e8ea] to-[#d8dde0]",
+    bg: "#e5e8ea",
+    invert: false,
+    hoverBg: "#6eff3e",
   },
   {
     slug: "social-media",
@@ -84,8 +95,9 @@ const SERVICES = [
     blurb:
       "Strategy, capture, edit, post, repeat. Always-on content that compounds attention. Offered for clients who genuinely need it.",
     bullets: ["Organic content", "Short-form", "Community ops"],
-    tone: "from-[#0a0a0a] to-[#000000]",
+    bg: "#000000",
     invert: true,
+    hoverBg: "#40bbff",
   },
 ];
 
@@ -116,95 +128,96 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] rounded-2xl overflow-hidden">
-          {SERVICES.map((s) => (
-            <article
-              key={s.code}
-              className="svc-card group bg-background relative overflow-hidden"
-            >
-              <div
-                className={`aspect-[5/4] bg-gradient-to-br ${s.tone} relative overflow-hidden`}
-              >
-                <div
-                  className={`absolute inset-0 ${
-                    s.invert
-                      ? "bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.08),transparent_60%)]"
-                      : "bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.6),transparent_60%)]"
-                  }`}
-                />
-                <div className="absolute top-5 left-5 flex items-center gap-2">
-                  <span
-                    className={`font-mono text-[11px] ${
-                      s.invert ? "text-background/70" : "text-foreground/70"
-                    }`}
-                  >
-                    {s.code}
-                  </span>
-                  <span
-                    className={`font-mono text-[11px] ${
-                      s.invert ? "text-background/40" : "text-foreground/40"
-                    }`}
-                  >
-                    / {s.tag}
-                  </span>
-                </div>
-                <div
-                  className="absolute inset-0 flex items-center justify-center"
-                  aria-hidden
-                >
-                  <div
-                    className={`w-24 h-24 lg:w-28 lg:h-28 ${
-                      s.invert ? "bg-background/90" : "bg-foreground/85"
-                    }`}
-                    style={{
-                      WebkitMaskImage: `url('${s.icon}')`,
-                      maskImage: `url('${s.icon}')`,
-                      WebkitMaskRepeat: "no-repeat",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskPosition: "center",
-                      maskPosition: "center",
-                      WebkitMaskSize: "contain",
-                      maskSize: "contain",
-                    }}
-                  />
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-7">
-                  <p
-                    className={`font-serif uppercase text-4xl lg:text-5xl tracking-[-0.02em] ${
-                      s.invert ? "text-background/95" : "text-foreground/90"
-                    }`}
-                  >
-                    {s.name}
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-6 lg:p-8">
-                <p className="text-foreground/85 leading-relaxed">{s.blurb}</p>
-                <ul className="mt-5 grid gap-1.5">
-                  {s.bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="flex items-baseline gap-2 text-sm text-muted"
-                    >
-                      <span className="font-mono text-[10px]">→</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={`/services/${s.slug}`}
-                  className="mt-6 inline-flex items-center gap-2 text-sm hover-underline"
-                >
-                  Explore service
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </article>
-          ))}
+          {SERVICES.map((s) => {
+            return <ServiceCard key={s.code} s={s} />;
+          })}
         </div>
-
       </div>
     </section>
+  );
+}
+
+type ServiceItem = (typeof SERVICES)[number];
+
+function ServiceCard({ s }: { s: ServiceItem }) {
+  const [hover, setHover] = useState(false);
+  const bg = hover ? s.hoverBg : s.bg;
+  const invertText = hover ? (s.hoverInvert ?? s.invert) : s.invert;
+  const textColor = invertText ? "text-white" : "text-black";
+  const fillColor = invertText ? "bg-white" : "bg-black";
+  return (
+    <article className="svc-card group bg-background relative overflow-hidden">
+      <div
+        className="aspect-[5/4] relative overflow-hidden transition-colors duration-300 ease-out"
+        style={{ backgroundColor: bg }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        <div className="absolute top-5 left-5 flex items-center gap-2">
+          <span
+            className={`font-mono text-[11px] transition-colors ${
+              invertText ? "text-white/80" : "text-black/80"
+            }`}
+          >
+            {s.code}
+          </span>
+          <span
+            className={`font-mono text-[11px] transition-colors ${
+              invertText ? "text-white/50" : "text-black/50"
+            }`}
+          >
+            / {s.tag}
+          </span>
+        </div>
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          aria-hidden
+        >
+          <div
+            className={`w-24 h-24 lg:w-28 lg:h-28 transition-colors duration-300 ${fillColor}`}
+            style={{
+              WebkitMaskImage: `url('${s.icon}')`,
+              maskImage: `url('${s.icon}')`,
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskPosition: "center",
+              maskPosition: "center",
+              WebkitMaskSize: "contain",
+              maskSize: "contain",
+            }}
+          />
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-7">
+          <p
+            className={`font-serif uppercase text-4xl lg:text-5xl tracking-[-0.02em] transition-colors ${textColor}`}
+          >
+            {s.name}
+          </p>
+        </div>
+      </div>
+
+      <div className="p-6 lg:p-8">
+        <p className="text-foreground/85 leading-relaxed">{s.blurb}</p>
+        <ul className="mt-5 grid gap-1.5">
+          {s.bullets.map((b) => (
+            <li
+              key={b}
+              className="flex items-baseline gap-2 text-sm text-muted"
+            >
+              <span className="font-mono text-[10px]">→</span>
+              {b}
+            </li>
+          ))}
+        </ul>
+        <Link
+          href={`/services/${s.slug}`}
+          className="mt-6 inline-flex items-center gap-2 text-sm text-foreground transition-colors hover:text-[var(--brand-blue)]"
+        >
+          Explore service
+          <span aria-hidden>→</span>
+        </Link>
+      </div>
+    </article>
   );
 }

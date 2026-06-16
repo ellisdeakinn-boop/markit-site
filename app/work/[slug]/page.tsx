@@ -75,8 +75,7 @@ export default async function ProjectPage({
         ]}
       />
 
-      <section className="relative w-full bg-foreground text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(255,255,255,0.06),transparent_60%)]" />
+      <section className="relative w-full bg-[var(--brand-blue)] text-white overflow-hidden">
         <div className="relative mx-auto max-w-[1480px] px-6 lg:px-10 pt-40 pb-20 lg:pt-52 lg:pb-32">
           <div className="flex items-center gap-3 mb-10">
             <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/60">

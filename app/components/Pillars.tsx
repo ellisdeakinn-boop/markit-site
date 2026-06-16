@@ -35,19 +35,19 @@ export default function Pillars() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] rounded-2xl overflow-hidden">
           {PILLARS.map((p, i) => {
             const tones = [
-              "bg-[var(--brand-blue)] text-white",
-              "bg-[var(--brand-sky)] text-white",
-              "bg-[var(--brand-lime)] text-[var(--brand-blue)]",
+              "bg-[var(--brand-blue)] text-white hover:bg-black",
+              "bg-[var(--brand-sky)] text-white hover:bg-[var(--brand-blue)]",
+              "bg-[var(--brand-lime)] text-black hover:bg-white",
             ];
             const labelTones = [
               "text-white/70",
               "text-white/80",
-              "text-[var(--brand-blue)]/80",
+              "text-black/70",
             ];
             return (
               <div
                 key={p.num}
-                className={`${tones[i]} p-8 lg:p-10 flex flex-col justify-between min-h-[260px]`}
+                className={`${tones[i]} p-8 lg:p-10 flex flex-col justify-between min-h-[260px] transition-colors duration-300`}
               >
                 <div className="flex items-center justify-between">
                   <span className={`font-mono text-xs ${labelTones[i]}`}>

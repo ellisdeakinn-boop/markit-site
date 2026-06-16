@@ -1,11 +1,6 @@
 export default function Process() {
   return (
     <section id="process" className="bg-[var(--brand-blue)] text-white relative overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-25"
-        style={{ background: "var(--brand-gradient)" }}
-      />
       <div className="relative z-10 mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
           <div className="md:col-span-4">
@@ -52,8 +47,11 @@ export default function Process() {
                   d: "Weekly creative, copy, and CRO. Compounding returns.",
                 },
               ].map((step) => (
-                <div key={step.k} className="bg-[var(--brand-blue)] p-6">
-                  <span className="inline-flex items-center justify-center w-9 h-9 bg-[var(--brand-lime)] text-[var(--brand-blue)] font-mono text-[12px] font-medium">
+                <div
+                  key={step.k}
+                  className="group bg-[var(--brand-blue)] p-6 transition-colors duration-300 hover:bg-black"
+                >
+                  <span className="inline-flex items-center justify-center w-9 h-9 bg-white text-[var(--brand-blue)] font-mono text-[12px] font-medium transition-colors group-hover:bg-[var(--brand-lime)] group-hover:text-black">
                     {step.k}
                   </span>
                   <p className="font-serif text-xl mt-4 tracking-[-0.015em] text-white">

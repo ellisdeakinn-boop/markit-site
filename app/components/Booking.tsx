@@ -21,10 +21,8 @@ export default function Booking() {
   return (
     <section
       id="book"
-      className="relative text-white overflow-hidden"
-      style={{ background: "var(--brand-gradient)" }}
+      className="relative text-white overflow-hidden bg-[var(--brand-blue)]"
     >
-      <div className="absolute inset-0 bg-[var(--brand-blue)]/40 mix-blend-multiply pointer-events-none" />
       <div className="relative z-10 mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-28 lg:pb-48">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-12 lg:mb-16">
           <div className="md:col-span-5">
@@ -35,7 +33,7 @@ export default function Booking() {
               Tell us what you&apos;re trying to build.
             </h2>
             <p className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-white/80">
-              <span className="inline-block w-2 h-2 bg-[var(--brand-lime)]" aria-hidden />
+              <span className="inline-block w-2 h-2 bg-white" aria-hidden />
               markit<span className="opacity-60">[ing]</span>
             </p>
           </div>

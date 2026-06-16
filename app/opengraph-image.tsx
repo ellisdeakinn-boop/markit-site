@@ -14,8 +14,7 @@ export default async function OG() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background:
-            "linear-gradient(120deg, #6eff3e 0%, #40bbff 50%, #0074ff 100%)",
+          background: "#0074ff",
           color: "#ffffff",
           padding: "72px 80px",
           fontFamily: "system-ui, sans-serif",
