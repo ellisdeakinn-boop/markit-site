@@ -10,6 +10,7 @@ type Stat = {
     suffix?: string;
     decimals?: number;
   };
+  sizeClass?: string;
 };
 
 const STATS: Stat[] = [
@@ -32,6 +33,8 @@ const STATS: Stat[] = [
     l: "monthly revenue, 12 days",
     c: "Abigail · info business",
     count: { to: 45, prefix: "$400 → $", suffix: "K" },
+    sizeClass:
+      "font-serif text-xl sm:text-2xl md:text-3xl lg:text-[2.4rem] tracking-[-0.025em] tabular-nums block whitespace-nowrap text-[var(--brand-blue)]",
   },
 ];
 
@@ -195,7 +198,10 @@ export default function Proof() {
                 prefix={s.count.prefix}
                 suffix={s.count.suffix}
                 decimals={s.count.decimals}
-                className="font-serif text-3xl md:text-5xl tracking-[-0.025em] tabular-nums block text-[var(--brand-blue)]"
+                className={
+                  s.sizeClass ??
+                  "font-serif text-3xl md:text-5xl tracking-[-0.025em] tabular-nums block whitespace-nowrap text-[var(--brand-blue)]"
+                }
               />
               <p className="text-xs text-muted mt-3 leading-snug">{s.l}</p>
               <p className="font-mono text-[10px] text-foreground/60 mt-4 uppercase tracking-[0.08em]">
@@ -226,7 +232,7 @@ export default function Proof() {
                   <div
                     role="img"
                     aria-label={p.name}
-                    className="w-full h-20 md:h-24 lg:h-28 bg-foreground group-hover:bg-[var(--brand-blue)] transition-colors duration-300"
+                    className="w-full h-20 md:h-24 lg:h-28 bg-foreground transition-[background] duration-300 group-hover:[background-image:linear-gradient(120deg,#6eff3e_0%,#40bbff_50%,#0074ff_100%)]"
                     style={{
                       WebkitMaskImage: `url('${p.logo}')`,
                       maskImage: `url('${p.logo}')`,
