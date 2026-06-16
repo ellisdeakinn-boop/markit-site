@@ -7,7 +7,10 @@ const POSTER_SRC = "/hero-poster.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-[var(--brand-blue)] text-white border-b-0">
+    <section
+      className="relative w-full h-screen min-h-[640px] overflow-hidden text-white border-b-0"
+      style={{ background: "var(--hero-gradient)" }}
+    >
 
       <video
         autoPlay
@@ -27,7 +30,8 @@ export default function Hero() {
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-[var(--brand-blue)]/35 pointer-events-none" />
+      <div className="absolute inset-0 bg-[var(--brand-blue)]/30 mix-blend-multiply pointer-events-none" />
+
 
       <div className="relative z-10 h-full flex flex-col">
         <div className="mx-auto w-full max-w-[1480px] px-6 lg:px-10 pt-28 lg:pt-32 flex items-center justify-between">
@@ -48,7 +52,7 @@ export default function Hero() {
           <div className="mt-6 lg:mt-8">
             <MagneticButton
               href="#book"
-              className="inline-flex items-center gap-2 rounded-full bg-white text-[var(--brand-blue)] px-5 py-3 text-sm font-medium transition-colors hover:bg-black hover:text-white"
+              className="cta-glow inline-flex items-center gap-2 rounded-full bg-black text-white px-5 py-3 text-sm font-medium border border-black"
             >
               Work with us
               <span aria-hidden>→</span>

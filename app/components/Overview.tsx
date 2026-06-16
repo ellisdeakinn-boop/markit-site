@@ -27,7 +27,7 @@ export default function Overview() {
             <div className="mt-10 flex items-center gap-3">
               <a
                 href="#work"
-                className="inline-flex items-center gap-3 rounded-full bg-[var(--brand-blue)] text-white px-5 py-2.5 text-sm hover:opacity-90 transition-opacity"
+                className="cta-glow inline-flex items-center gap-3 rounded-full bg-[var(--brand-blue)] text-white border border-[var(--brand-blue)] px-5 py-2.5 text-sm"
               >
                 See the work
                 <span aria-hidden>→</span>

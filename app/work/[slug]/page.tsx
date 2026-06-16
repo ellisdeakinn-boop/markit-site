@@ -131,7 +131,7 @@ export default async function ProjectPage({
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-2 rounded-full border border-white/40 text-white px-5 py-2.5 text-sm hover:bg-white hover:text-foreground transition-colors"
+              className="cta-glow mt-10 inline-flex items-center gap-2 rounded-full bg-transparent border border-white/50 text-white px-5 py-2.5 text-sm"
             >
               Visit live site
               <span aria-hidden>↗</span>

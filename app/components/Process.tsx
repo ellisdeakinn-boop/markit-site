@@ -10,7 +10,7 @@ export default function Process() {
             </p>
             <a
               href="#book"
-              className="mt-8 inline-flex items-center gap-3 rounded-full border border-white/60 px-5 py-2.5 text-sm hover:bg-white hover:text-[var(--brand-blue)] transition-colors"
+              className="cta-glow mt-8 inline-flex items-center gap-3 rounded-full bg-transparent border border-white/60 text-white px-5 py-2.5 text-sm"
             >
               Start a conversation
               <span aria-hidden>→</span>
@@ -51,7 +51,7 @@ export default function Process() {
                   key={step.k}
                   className="group bg-[var(--brand-blue)] p-6 transition-colors duration-300 hover:bg-black"
                 >
-                  <span className="inline-flex items-center justify-center w-9 h-9 bg-white text-[var(--brand-blue)] font-mono text-[12px] font-medium transition-colors group-hover:bg-[var(--brand-lime)] group-hover:text-black">
+                  <span className="inline-flex items-center justify-center w-9 h-9 bg-white text-[var(--brand-blue)] font-mono text-[12px] font-medium transition-colors group-hover:bg-[var(--brand-sky)] group-hover:text-white">
                     {step.k}
                   </span>
                   <p className="font-serif text-xl mt-4 tracking-[-0.015em] text-white">

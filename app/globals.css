@@ -6,12 +6,34 @@
   --muted: #6b6b6b;
   --border: #e5e8ea;
 
-  /* Markit brand (flat only — no gradients) */
+  /* Markit brand */
   --brand-blue: #0074ff;
   --brand-sky: #40bbff;
   --brand-lime: #6eff3e;
   --brand-ink: #000000;
   --brand-fog: #e5e8ea;
+  /* Hero-only gradient — every other section stays flat */
+  --hero-gradient: linear-gradient(
+    120deg,
+    var(--brand-lime) 0%,
+    var(--brand-sky) 50%,
+    var(--brand-blue) 100%
+  );
+}
+
+.cta-glow {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cta-glow:hover {
+  background-color: #ffffff !important;
+  color: var(--brand-blue) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 1px rgba(0, 116, 255, 0.35),
+    0 0 24px 2px rgba(0, 116, 255, 0.55),
+    0 0 60px 14px rgba(0, 116, 255, 0.35);
 }
 
 @theme inline {

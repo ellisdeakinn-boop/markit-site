@@ -190,7 +190,7 @@ export default async function ServicePage({
                       Case / {p.disciplines.join(" · ")}
                     </span>
                     {p.status === "CURRENT" && (
-                      <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2 py-0.5">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-white bg-[var(--brand-blue)] rounded-full px-2 py-0.5">
                         Current
                       </span>
                     )}
