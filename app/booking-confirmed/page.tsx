@@ -8,8 +8,8 @@
 // Page structure follows the Neo / Jeremy Haynes confirmation playbook:
 // modern due diligence framing, breakout Q&A modules to compress sales
 // cycle, transparent worst-case statements, real numbers as trust assets.
-// FAQs are written for the Markit ICP: local service businesses doing
-// $500K+/yr in revenue, often burned by a previous agency.
+// FAQs are written for the Markit ICP: businesses doing $500K+/yr in
+// revenue with an offer worth scaling, often burned by a previous agency.
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -51,7 +51,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How long until I see real results?",
-    a: "Most local service clients see lead volume move inside the first 30 days, with sustained lift between days 30 and 90 as we kill what does not convert and double down on what does. Pocket Dispo hit 21 million views in 30 days from a single campaign. Arthur went from zero to $25K monthly recurring in 9 days. These are real numbers, not the median. We will talk about realistic expectations for your specific business on the call.",
+    a: "Most clients see lead volume move inside the first 30 days, with sustained lift between days 30 and 90 as we kill what does not convert and double down on what does. Pocket Dispo hit 21 million views in 30 days from a single campaign. Arthur went from zero to $25K monthly recurring in 9 days. These are real numbers, not the median. We will talk about realistic expectations for your specific business on the call.",
   },
   {
     q: "Do you offer a guarantee?",
@@ -71,11 +71,11 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Will this work for my specific business?",
-    a: "We work with local service businesses doing $500K or more in annual revenue, with capacity to handle 30 to 100 percent more lead volume than they get today. Law firms, home services, healthcare practices, professional services, and similar. If you are pre-revenue, very early stage, or in a category we have not run before, we will tell you on the call. We turn down more clients than we take on.",
+    a: "We work with businesses doing $500K or more in annual revenue, with a real offer and the capacity to handle 30 to 100 percent more lead volume than they get today. Service businesses, e-commerce, consumer brands, info products, experiential venues, professional services. The category matters less than whether the offer converts and the team can keep up. If you are pre-revenue or very early stage, we will tell you on the call. We turn down more clients than we take on.",
   },
   {
     q: "What if I do not have an ad account, website, or any of this set up?",
-    a: "Fine. Half our local clients arrive without one or more of those. We set them up as part of onboarding. The website becomes a Markit website if you want it to. The ad account becomes a Markit-managed account on your name. Everything we build, you own. Nothing is rented from us.",
+    a: "Fine. Half our clients arrive without one or more of those. We set them up as part of onboarding. The website becomes a Markit website if you want it to. The ad account becomes a Markit-managed account on your name. Everything we build, you own. Nothing is rented from us.",
   },
   {
     q: "Who am I actually working with day to day?",
@@ -218,9 +218,9 @@ export default async function BookingConfirmedPage({
               Between now and the call, you&apos;ll probably Google us,
               search Reddit, look for case studies, and try to figure out
               whether this is real. Good. The questions below are the ones
-              real local service business owners actually ask before they
-              hire us. The answers are honest, including the parts we
-              don&apos;t normally lead with.
+              real business owners actually ask before they hire us. The
+              answers are honest, including the parts we don&apos;t normally
+              lead with.
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ const PILLARS = [
   {
     num: "0.1",
     label: "Mission",
-    body: "Make local service businesses impossible to ignore in their market.",
+    body: "Make any business with an offer worth scaling impossible to ignore in their market.",
   },
   {
     num: "0.2",
@@ -19,7 +19,7 @@ const PILLARS = [
 ];
 
 const META = [
-  { k: "Built For", v: "Local service businesses ($500K+/yr)" },
+  { k: "Built For", v: "Businesses with real revenue, ready to scale ($500K+/yr)" },
   { k: "Lead Disciplines", v: "Video & Paid Ads" },
   { k: "Studio", v: "Arizona, PST" },
 ];

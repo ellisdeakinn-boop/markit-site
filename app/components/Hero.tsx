@@ -26,8 +26,7 @@ export default function Hero() {
 
         <div className="flex-1 flex flex-col justify-end items-center text-center md:items-start md:text-left mx-auto w-full max-w-[1480px] px-6 lg:px-10 pb-16 lg:pb-20">
           <h1 className="fade-up max-w-[680px] font-serif uppercase text-[18px] leading-[1.15] tracking-[-0.01em] sm:text-[22px] md:text-[28px] lg:text-[34px] text-white">
-            We build the marketing engine local businesses use to print leads,
-            fill calendars, and book walk-ins.
+            We build the marketing engine that turns attention into revenue.
           </h1>
 
           <div className="mt-6 lg:mt-8">

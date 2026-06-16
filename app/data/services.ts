@@ -141,7 +141,7 @@ export const SERVICES: Service[] = [
     tagline:
       "Whatever CRM you run, we wire it up. No CRM, we deploy GoHighLevel.",
     intro:
-      "Leads are only valuable when they make it to a calendar or a counter. We build the plumbing that turns clicks into booked calls and walk-ins: intake, automated follow-up, reputation, and missed-call recovery, all in one system.",
+      "Leads are only valuable when they make it to a calendar, a cart, or a counter. We build the plumbing that turns clicks into booked calls, sales, and walk-ins: intake, automated follow-up, reputation, and missed-call recovery, all in one system.",
     whatWeDo: [
       "GoHighLevel deployment or integration with your existing stack",
       "Zapier automations between your tools",

@@ -83,7 +83,7 @@ const SERVICES = [
     name: "Copywriting",
     tag: "WORDS",
     blurb:
-      "Direct-response copy with taste. Landing pages, ad scripts, emails, and SMS sequences engineered to move booked calls and walk-ins.",
+      "Direct-response copy with taste. Landing pages, ad scripts, emails, and SMS sequences engineered to move booked calls and sales.",
     bullets: ["Landing pages", "Email & SMS", "Ad scripts"],
     bg: "#000000",
     invert: true,

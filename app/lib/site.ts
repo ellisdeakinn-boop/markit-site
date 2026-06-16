@@ -11,18 +11,18 @@ export const SITE_NAME = "Markit";
 export const SITE_TAGLINE = "Beyond Marketing";
 
 export const SITE_DESCRIPTION =
-  "Markit builds the marketing engine local service businesses use to print leads, fill calendars, and book walk-ins. Paid ads, website builds, video production, lead generation, copywriting, and social media, all in-house in Arizona.";
+  "Markit builds the marketing engine that turns attention into revenue. Paid ads, website builds, video production, lead generation, copywriting, and social media, all in-house in Arizona. Built for businesses with an offer worth scaling.";
 
 export const SITE_KEYWORDS = [
   "marketing agency Arizona",
   "Phoenix marketing agency",
-  "local business marketing",
   "paid ads agency",
   "video production agency",
   "website build agency",
   "lead generation agency",
   "Meta ads agency",
   "in-house marketing team",
+  "performance marketing agency",
   "Markit",
 ];
 

@@ -12,12 +12,12 @@ import Booking from "./components/Booking";
 export const metadata: Metadata = {
   title: "Markit / Beyond Marketing",
   description:
-    "Markit is the in-house marketing engine local service businesses use to print leads, fill calendars, and book walk-ins. Paid ads, websites, video, lead generation, and copy. Arizona-based, Meta-first, six in-house disciplines.",
+    "Markit is the in-house marketing engine that turns attention into revenue. Paid ads, websites, video, lead generation, and copy. Arizona-based, Meta-first, six in-house disciplines. Built for businesses with an offer worth scaling.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Markit / Beyond Marketing",
     description:
-      "Six in-house disciplines. One operating team. The marketing engine local businesses use to print leads, fill calendars, and book walk-ins.",
+      "Six in-house disciplines. One operating team. The marketing engine that turns attention into revenue.",
     url: "/",
     type: "website",
   },

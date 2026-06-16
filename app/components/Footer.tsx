@@ -46,8 +46,8 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-6 max-w-md text-foreground/75 leading-relaxed">
-              The marketing engine for local service businesses. Built in
-              studio, shipped every week.
+              The marketing engine for businesses with an offer worth scaling.
+              Built in studio, shipped every week.
             </p>
             <Link
               href="/#book"

@@ -45,7 +45,7 @@ export default async function OG() {
             display: "flex",
           }}
         >
-          We build the marketing engine local businesses use to print leads.
+          We build the marketing engine that turns attention into revenue.
         </div>
 
         <div
