@@ -1,9 +1,5 @@
 import MagneticButton from "./MagneticButton";
-
-// Drop a video file at /public/hero.mp4 (and optionally /public/hero-poster.jpg)
-// and the hero will autoplay it full-bleed under the headline.
-const VIDEO_SRC = "/hero.mp4";
-const POSTER_SRC = "/hero-poster.jpg";
+import { HeroVideo } from "./HeroVideo";
 
 export default function Hero() {
   return (
@@ -12,23 +8,7 @@ export default function Hero() {
       style={{ background: "var(--hero-gradient)" }}
     >
 
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        controls={false}
-        disablePictureInPicture
-        poster={POSTER_SRC}
-        className="absolute inset-0 w-full h-full object-cover"
-        {...({
-          "webkit-playsinline": "true",
-          "x5-playsinline": "true",
-        } as React.HTMLAttributes<HTMLVideoElement>)}
-      >
-        <source src={VIDEO_SRC} type="video/mp4" />
-      </video>
+      <HeroVideo />
 
       <div className="absolute inset-0 bg-[var(--brand-blue)]/15 mix-blend-multiply pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[var(--brand-blue)]/70 via-[var(--brand-blue)]/20 to-transparent pointer-events-none" />

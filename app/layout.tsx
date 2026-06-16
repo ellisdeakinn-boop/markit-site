@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { StickyBookCTA } from "./components/StickyBookCTA";
 import SmoothScroll from "./components/SmoothScroll";
 import ScrollBlurController from "./components/ScrollBlurController";
 import SectionReveal from "./components/SectionReveal";
@@ -109,6 +110,7 @@ export default function RootLayout({
         <Header />
         <main className="flex flex-col flex-1 w-full">{children}</main>
         <Footer />
+        <StickyBookCTA />
       </body>
     </html>
   );
