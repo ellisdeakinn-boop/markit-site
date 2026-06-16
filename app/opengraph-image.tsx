@@ -14,7 +14,7 @@ export default async function OG() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0a0a0a",
+          background: "#0074ff",
           color: "#ffffff",
           padding: "72px 80px",
           fontFamily: "system-ui, sans-serif",
@@ -27,7 +27,7 @@ export default async function OG() {
             alignItems: "center",
             fontSize: 22,
             letterSpacing: 2,
-            opacity: 0.6,
+            opacity: 0.85,
           }}
         >
           <span>MARKIT®</span>
@@ -45,7 +45,7 @@ export default async function OG() {
             display: "flex",
           }}
         >
-          We build the marketing engine local businesses use to print leads.
+          We build the marketing engine that turns attention into revenue.
         </div>
 
         <div
@@ -55,11 +55,11 @@ export default async function OG() {
             alignItems: "center",
             fontSize: 22,
             letterSpacing: 2,
-            opacity: 0.6,
+            opacity: 0.85,
           }}
         >
           <span>ARIZONA · IN-HOUSE STUDIO</span>
-          <span>MARKIT.STUDIO</span>
+          <span>MARKITING.AGENCY</span>
         </div>
       </div>
     ),

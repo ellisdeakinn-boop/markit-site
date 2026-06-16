@@ -1,25 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import type { ServiceItem } from "./Services";
 
-type Service = {
-  slug: string;
-  icon: string;
-  code: string;
-  name: string;
-  tag: string;
-  blurb: string;
-  bullets: string[];
-  tone: string;
-  invert?: boolean;
-};
-
-export default function ServiceCard({ s }: { s: Service }) {
+export default function ServiceCard({ s }: { s: ServiceItem }) {
   const cardRef = useRef<HTMLElement>(null);
+  const tileRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef(0);
+  const [hover, setHover] = useState(false);
+
+  // Mobile scroll-hover: activate color swap when the tile is in the viewport center.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(hover: hover)").matches) return;
+    const el = tileRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setHover(entry.isIntersecting),
+      { rootMargin: "-25% 0px -25% 0px", threshold: 0 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   function onMove(e: React.MouseEvent<HTMLElement>) {
     const card = cardRef.current;
@@ -47,13 +52,18 @@ export default function ServiceCard({ s }: { s: Service }) {
       if (spotlightRef.current) {
         const mx = e.clientX - rect.left;
         const my = e.clientY - rect.top;
-        spotlightRef.current.style.background = `radial-gradient(280px circle at ${mx}px ${my}px, rgba(255,255,255,0.06), transparent 70%)`;
+        spotlightRef.current.style.background = `radial-gradient(280px circle at ${mx}px ${my}px, rgba(255,255,255,0.08), transparent 70%)`;
         spotlightRef.current.style.opacity = "1";
       }
     });
   }
 
+  function onEnter() {
+    setHover(true);
+  }
+
   function onLeave() {
+    setHover(false);
     const card = cardRef.current;
     if (!card) return;
     cancelAnimationFrame(rafRef.current);
@@ -64,6 +74,11 @@ export default function ServiceCard({ s }: { s: Service }) {
     });
   }
 
+  const bg = hover ? s.hoverBg : s.bg;
+  const invertText = hover ? (s.hoverInvert ?? s.invert) : s.invert;
+  const textColor = invertText ? "text-white" : "text-black";
+  const fillColor = invertText ? "bg-white" : "bg-black";
+
   return (
     <article
       ref={cardRef}
@@ -73,9 +88,9 @@ export default function ServiceCard({ s }: { s: Service }) {
         transition: "transform 350ms cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       onMouseMove={onMove}
+      onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
-      {/* cursor spotlight */}
       <div
         ref={spotlightRef}
         className="pointer-events-none absolute inset-0 z-10 opacity-0"
@@ -84,26 +99,21 @@ export default function ServiceCard({ s }: { s: Service }) {
       />
 
       <div
-        className={`aspect-[5/4] bg-gradient-to-br ${s.tone} relative overflow-hidden`}
+        ref={tileRef}
+        className="brand-ease aspect-[5/4] relative overflow-hidden"
+        style={{ backgroundColor: bg }}
       >
-        <div
-          className={`absolute inset-0 ${
-            s.invert
-              ? "bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.08),transparent_60%)]"
-              : "bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.6),transparent_60%)]"
-          }`}
-        />
         <div className="absolute top-5 left-5 flex items-center gap-2">
           <span
-            className={`font-mono text-[11px] ${
-              s.invert ? "text-background/70" : "text-foreground/70"
+            className={`font-mono text-[11px] brand-ease ${
+              invertText ? "text-white/80" : "text-black/80"
             }`}
           >
             {s.code}
           </span>
           <span
-            className={`font-mono text-[11px] ${
-              s.invert ? "text-background/40" : "text-foreground/40"
+            className={`font-mono text-[11px] brand-ease ${
+              invertText ? "text-white/50" : "text-black/50"
             }`}
           >
             / {s.tag}
@@ -113,9 +123,7 @@ export default function ServiceCard({ s }: { s: Service }) {
         <div className="absolute inset-0 flex items-center justify-center" aria-hidden>
           <div
             ref={iconRef}
-            className={`w-24 h-24 lg:w-28 lg:h-28 ${
-              s.invert ? "bg-background/90" : "bg-foreground/85"
-            }`}
+            className={`brand-ease w-24 h-24 lg:w-28 lg:h-28 ${fillColor}`}
             style={{
               WebkitMaskImage: `url('${s.icon}')`,
               maskImage: `url('${s.icon}')`,
@@ -125,16 +133,15 @@ export default function ServiceCard({ s }: { s: Service }) {
               maskPosition: "center",
               WebkitMaskSize: "contain",
               maskSize: "contain",
-              transition: "transform 350ms cubic-bezier(0.16, 1, 0.3, 1)",
+              transition:
+                "transform 350ms cubic-bezier(0.16, 1, 0.3, 1), background-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           />
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-7">
           <p
-            className={`font-serif uppercase text-4xl lg:text-5xl tracking-[-0.02em] ${
-              s.invert ? "text-background/95" : "text-foreground/90"
-            }`}
+            className={`font-serif uppercase text-4xl lg:text-5xl tracking-[-0.02em] brand-ease ${textColor}`}
           >
             {s.name}
           </p>
@@ -156,7 +163,7 @@ export default function ServiceCard({ s }: { s: Service }) {
         </ul>
         <Link
           href={`/services/${s.slug}`}
-          className="mt-6 inline-flex items-center gap-2 text-sm hover-underline"
+          className="mt-6 inline-flex items-center gap-2 text-sm text-foreground transition-colors hover:text-[var(--brand-blue)]"
         >
           Explore service
           <span aria-hidden>→</span>

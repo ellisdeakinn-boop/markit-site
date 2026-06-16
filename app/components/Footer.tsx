@@ -40,19 +40,20 @@ export default function Footer() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/markit-logo.png"
+                src="/brand-v2/wordmark-black.png"
                 alt="Markit"
-                className="h-32 md:h-40 w-auto"
+                className="h-10 md:h-12 w-auto"
               />
             </Link>
             <p className="mt-6 max-w-md text-foreground/75 leading-relaxed">
-              The marketing engine for local service businesses. Built in
-              studio, shipped every week.
+              The marketing engine for businesses with an offer worth scaling.
+              Built in studio, shipped every week.
             </p>
             <Link
               href="/#book"
-              className="mt-6 inline-block font-serif text-2xl hover-underline tracking-[-0.02em]"
+              className="mt-6 inline-flex items-center gap-2 font-serif text-2xl hover-underline tracking-[-0.02em]"
             >
+              <span className="inline-block w-2 h-2 bg-[var(--brand-blue)] rounded-full" aria-hidden />
               Book a call →
             </Link>
           </div>
@@ -64,7 +65,7 @@ export default function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="hover-underline"
+                    className="transition-colors hover:text-[var(--brand-blue)]"
                   >
                     {s.label}
                   </Link>
@@ -78,7 +79,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {WORK_LINKS.map((w) => (
                 <li key={w.slug}>
-                  <Link href={`/work/${w.slug}`} className="hover-underline">
+                  <Link href={`/work/${w.slug}`} className="transition-colors hover:text-[var(--brand-blue)]">
                     {w.label}
                   </Link>
                 </li>
@@ -95,7 +96,7 @@ export default function Footer() {
                     href={f.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover-underline"
+                    className="transition-colors hover:text-[var(--brand-blue)]"
                   >
                     {f.name}
                   </a>

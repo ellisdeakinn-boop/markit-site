@@ -1,8 +1,10 @@
+import { PillarCard } from "./PillarCard";
+
 const PILLARS = [
   {
     num: "0.1",
     label: "Mission",
-    body: "Make local service businesses impossible to ignore in their market.",
+    body: "Make any business with an offer worth scaling impossible to ignore in their market.",
   },
   {
     num: "0.2",
@@ -17,7 +19,7 @@ const PILLARS = [
 ];
 
 const META = [
-  { k: "Built For", v: "Local service businesses ($500K+/yr)" },
+  { k: "Built For", v: "Businesses with real revenue, ready to scale ($500K+/yr)" },
   { k: "Lead Disciplines", v: "Video & Paid Ads" },
   { k: "Studio", v: "Arizona, PST" },
 ];
@@ -33,19 +35,8 @@ export default function Pillars() {
     <section>
       <div className="mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-28">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] rounded-2xl overflow-hidden">
-          {PILLARS.map((p) => (
-            <div
-              key={p.num}
-              className="bg-background p-8 lg:p-10 flex flex-col justify-between min-h-[260px]"
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-muted">{p.num}</span>
-                <span className="eyebrow">{p.label}</span>
-              </div>
-              <p className="font-serif text-2xl md:text-3xl leading-tight tracking-[-0.015em] mt-12">
-                {p.body}
-              </p>
-            </div>
+          {PILLARS.map((p, i) => (
+            <PillarCard key={p.num} p={p} i={i} />
           ))}
         </div>
 

@@ -1,16 +1,18 @@
+import { ProcessStep } from "./ProcessStep";
+
 export default function Process() {
   return (
-    <section id="process">
-      <div className="mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-32">
+    <section id="process" className="bg-[var(--brand-blue)] text-white relative overflow-hidden">
+      <div className="relative z-10 mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
           <div className="md:col-span-4">
-            <p className="eyebrow">Process / 03</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/70">Process / 03</p>
             <p className="font-serif uppercase text-3xl md:text-5xl mt-3 leading-tight tracking-[-0.02em]">
               How we work.
             </p>
             <a
               href="#book"
-              className="mt-8 inline-flex items-center gap-3 rounded-full border border-foreground px-5 py-2.5 text-sm hover:bg-foreground hover:text-background transition-colors"
+              className="cta-glow mt-8 inline-flex items-center gap-3 rounded-full bg-transparent border border-white/60 text-white px-5 py-2.5 text-sm"
             >
               Start a conversation
               <span aria-hidden>→</span>
@@ -18,18 +20,18 @@ export default function Process() {
           </div>
 
           <div className="md:col-span-8">
-            <p className="font-serif uppercase text-2xl md:text-3xl leading-[1.25] tracking-[-0.015em] text-foreground/90">
+            <p className="font-serif uppercase text-2xl md:text-3xl leading-[1.25] tracking-[-0.015em] text-white">
               No 90-day onboarding decks. No subcontractor relay. We audit,
               we build, we iterate, and you see the work happen weekly.
             </p>
-            <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/75 max-w-2xl">
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-white/85 max-w-2xl">
               From the first audit to the 100th ad iteration, every lever is
               measured. We kill what doesn&apos;t convert, double what does,
               and ship every week. You get a marketing engine you own, not a
               deck of recommendations.
             </p>
 
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] rounded-xl overflow-hidden">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/15 border border-white/15 rounded-xl overflow-hidden">
               {[
                 {
                   k: "01",
@@ -47,17 +49,7 @@ export default function Process() {
                   d: "Weekly creative, copy, and CRO. Compounding returns.",
                 },
               ].map((step) => (
-                <div key={step.k} className="bg-background p-6">
-                  <span className="font-mono text-[11px] text-muted">
-                    {step.k}
-                  </span>
-                  <p className="font-serif text-xl mt-3 tracking-[-0.015em]">
-                    {step.t}
-                  </p>
-                  <p className="text-sm text-foreground/70 mt-2 leading-relaxed">
-                    {step.d}
-                  </p>
-                </div>
+                <ProcessStep key={step.k} k={step.k} t={step.t} d={step.d} />
               ))}
             </div>
           </div>

@@ -60,10 +60,9 @@ export default function Header() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/brand/markit-mark.png"
+              src={onLight ? "/brand-v2/wordmark-black.png" : "/brand-v2/wordmark-white.png"}
               alt="Markit"
-              className="h-8 md:h-9 w-auto transition-[filter] duration-300"
-              style={onLight ? {} : { filter: "invert(1)" }}
+              className="h-5 md:h-6 w-auto transition-opacity duration-300"
             />
           </a>
 
@@ -72,26 +71,32 @@ export default function Header() {
               <a
                 key={item.num}
                 href={item.href}
-                className="flex items-baseline gap-1.5 group"
+                className={`flex items-baseline gap-1.5 group transition-colors ${
+                  onLight
+                    ? "hover:text-[var(--brand-blue)]"
+                    : "hover:text-[var(--brand-lime)]"
+                }`}
               >
                 <span
-                  className={`font-mono text-[10px] ${
-                    onLight ? "text-muted" : "text-white/60"
+                  className={`font-mono text-[10px] transition-colors ${
+                    onLight
+                      ? "text-muted group-hover:text-[var(--brand-blue)]"
+                      : "text-white/60 group-hover:text-[var(--brand-lime)]"
                   }`}
                 >
                   {item.num}
                 </span>
-                <span className="text-sm hover-underline">{item.label}</span>
+                <span className="text-sm">{item.label}</span>
               </a>
             ))}
           </nav>
 
           <a
             href="/#book"
-            className={`hidden md:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors ${
+            className={`cta-glow hidden md:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm border ${
               onLight
-                ? "bg-foreground text-background hover:opacity-90"
-                : "border border-white/40 text-white hover:bg-white hover:text-foreground"
+                ? "bg-[var(--brand-blue)] text-white border-[var(--brand-blue)]"
+                : "bg-transparent border-white/50 text-white"
             }`}
           >
             Book a call
@@ -162,7 +167,7 @@ export default function Header() {
           <a
             href="/#book"
             onClick={() => setMenuOpen(false)}
-            className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-5 py-4 text-base transition-all duration-500 ${
+            className={`cta-glow mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand-blue)] text-white border border-[var(--brand-blue)] px-5 py-4 text-base transition-all duration-500 ${
               menuOpen
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-3"

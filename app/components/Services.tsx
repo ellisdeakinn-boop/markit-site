@@ -1,6 +1,6 @@
 import ServiceCard from "./ServiceCard";
 
-const SERVICES = [
+export const SERVICES = [
   {
     slug: "paid-ads",
     icon: "/services/paid-ads.png",
@@ -14,8 +14,10 @@ const SERVICES = [
       "Google when it fits",
       "Creative + media in one team",
     ],
-    tone: "from-[#0f0f10] to-[#0a0a0a]",
+    bg: "#000000",
     invert: true,
+    hoverBg: "#0074ff",
+    hoverInvert: true,
   },
   {
     slug: "website-builds",
@@ -30,8 +32,10 @@ const SERVICES = [
       "Conversion-built funnels & VSLs",
       "SEO and performance baked in",
     ],
-    tone: "from-[#0f0f10] to-[#0a0a0a]",
-    invert: true,
+    bg: "#ffffff",
+    invert: false,
+    hoverBg: "#40bbff",
+    hoverInvert: true,
   },
   {
     slug: "video-production",
@@ -46,7 +50,10 @@ const SERVICES = [
       "On-location & in-studio shoots",
       "In-house edit team",
     ],
-    tone: "from-[#f3f3f3] to-[#e5e5e5]",
+    bg: "#000000",
+    invert: true,
+    hoverBg: "#6eff3e",
+    hoverInvert: false,
   },
   {
     slug: "lead-generation",
@@ -61,7 +68,10 @@ const SERVICES = [
       "Reputation & reviews",
       "Missed-call follow-up & AI receptionist",
     ],
-    tone: "from-[#f3f3f3] to-[#e5e5e5]",
+    bg: "#ffffff",
+    invert: false,
+    hoverBg: "#0074ff",
+    hoverInvert: true,
   },
   {
     slug: "copywriting",
@@ -70,9 +80,12 @@ const SERVICES = [
     name: "Copywriting",
     tag: "WORDS",
     blurb:
-      "Direct-response copy with taste. Landing pages, ad scripts, emails, and SMS sequences engineered to move booked calls and walk-ins.",
+      "Direct-response copy with taste. Landing pages, ad scripts, emails, and SMS sequences engineered to move booked calls and sales.",
     bullets: ["Landing pages", "Email & SMS", "Ad scripts"],
-    tone: "from-[#f3f3f3] to-[#e5e5e5]",
+    bg: "#000000",
+    invert: true,
+    hoverBg: "#6eff3e",
+    hoverInvert: false,
   },
   {
     slug: "social-media",
@@ -83,9 +96,14 @@ const SERVICES = [
     blurb:
       "Strategy, capture, edit, post, repeat. Always-on content that compounds attention. Offered for clients who genuinely need it.",
     bullets: ["Organic content", "Short-form", "Community ops"],
-    tone: "from-[#f3f3f3] to-[#e5e5e5]",
+    bg: "#ffffff",
+    invert: false,
+    hoverBg: "#40bbff",
+    hoverInvert: true,
   },
 ];
+
+export type ServiceItem = (typeof SERVICES)[number];
 
 export default function Services() {
   return (
@@ -93,11 +111,14 @@ export default function Services() {
       <div className="mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-16 lg:mb-24">
           <div className="md:col-span-4">
-            <p className="eyebrow">Services / 01</p>
+            <p className="eyebrow flex items-center gap-2">
+              <span className="inline-block w-2 h-2 bg-[var(--brand-blue)]" aria-hidden />
+              Services / 01
+            </p>
           </div>
           <div className="md:col-span-8">
             <h2 className="font-serif uppercase text-4xl md:text-6xl leading-[1.05] tracking-[-0.02em]">
-              Ads and websites are our specialty.{" "}
+              <span className="text-[var(--brand-blue)]">Ads and websites</span> are our specialty.{" "}
               <span className="text-muted">
                 Video is the engine that powers them.
               </span>
@@ -115,7 +136,6 @@ export default function Services() {
             <ServiceCard key={s.code} s={s} />
           ))}
         </div>
-
       </div>
     </section>
   );
