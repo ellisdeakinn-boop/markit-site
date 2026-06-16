@@ -34,6 +34,10 @@ export default function Booking() {
             <h2 className="font-serif uppercase text-4xl md:text-6xl leading-[1.05] tracking-[-0.02em] mt-3">
               Tell us what you&apos;re trying to build.
             </h2>
+            <p className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-white/80">
+              <span className="inline-block w-2 h-2 bg-[var(--brand-lime)]" aria-hidden />
+              markit<span className="opacity-60">[ing]</span>
+            </p>
           </div>
           <div className="md:col-span-7 md:col-start-6">
             <p className="text-base md:text-lg leading-relaxed text-white/85 max-w-xl">

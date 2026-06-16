@@ -14,7 +14,7 @@ const SERVICES = [
       "Google when it fits",
       "Creative + media in one team",
     ],
-    tone: "from-[#0f0f10] to-[#0a0a0a]",
+    tone: "from-[#0074ff] to-[#005ce0]",
     invert: true,
   },
   {
@@ -30,7 +30,7 @@ const SERVICES = [
       "Conversion-built funnels & VSLs",
       "SEO and performance baked in",
     ],
-    tone: "from-[#0f0f10] to-[#0a0a0a]",
+    tone: "from-[#40bbff] to-[#0074ff]",
     invert: true,
   },
   {
@@ -46,7 +46,7 @@ const SERVICES = [
       "On-location & in-studio shoots",
       "In-house edit team",
     ],
-    tone: "from-[#f3f3f3] to-[#e5e5e5]",
+    tone: "from-[#6eff3e] to-[#40bbff]",
   },
   {
     slug: "lead-generation",
@@ -61,7 +61,8 @@ const SERVICES = [
       "Reputation & reviews",
       "Missed-call follow-up & AI receptionist",
     ],
-    tone: "from-[#f3f3f3] to-[#e5e5e5]",
+    tone: "from-[#0a0a0a] to-[#000000]",
+    invert: true,
   },
   {
     slug: "copywriting",
@@ -72,7 +73,7 @@ const SERVICES = [
     blurb:
       "Direct-response copy with taste. Landing pages, ad scripts, emails, and SMS sequences engineered to move booked calls and walk-ins.",
     bullets: ["Landing pages", "Email & SMS", "Ad scripts"],
-    tone: "from-[#f3f3f3] to-[#e5e5e5]",
+    tone: "from-[#e5e8ea] to-[#d8dde0]",
   },
   {
     slug: "social-media",
@@ -83,7 +84,8 @@ const SERVICES = [
     blurb:
       "Strategy, capture, edit, post, repeat. Always-on content that compounds attention. Offered for clients who genuinely need it.",
     bullets: ["Organic content", "Short-form", "Community ops"],
-    tone: "from-[#f3f3f3] to-[#e5e5e5]",
+    tone: "from-[#0a0a0a] to-[#000000]",
+    invert: true,
   },
 ];
 
@@ -93,11 +95,14 @@ export default function Services() {
       <div className="mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-16 lg:mb-24">
           <div className="md:col-span-4">
-            <p className="eyebrow">Services / 01</p>
+            <p className="eyebrow flex items-center gap-2">
+              <span className="inline-block w-2 h-2 bg-[var(--brand-blue)]" aria-hidden />
+              Services / 01
+            </p>
           </div>
           <div className="md:col-span-8">
             <h2 className="font-serif uppercase text-4xl md:text-6xl leading-[1.05] tracking-[-0.02em]">
-              Ads and websites are our specialty.{" "}
+              <span className="text-[var(--brand-blue)]">Ads and websites</span> are our specialty.{" "}
               <span className="text-muted">
                 Video is the engine that powers them.
               </span>

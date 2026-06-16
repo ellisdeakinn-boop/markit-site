@@ -29,10 +29,13 @@ export default function Founders() {
       <div className="mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
           <div className="md:col-span-4">
-            <p className="eyebrow">Founders / 04</p>
+            <p className="eyebrow flex items-center gap-2">
+              <span className="inline-block w-2 h-2 bg-[var(--brand-blue)]" aria-hidden />
+              Founders / 04
+            </p>
             <p className="font-serif uppercase text-3xl md:text-5xl mt-3 leading-tight tracking-[-0.02em]">
               Two operators.{" "}
-              <span className="text-muted">No middlemen.</span>
+              <span className="text-[var(--brand-blue)]">No middlemen.</span>
             </p>
             <p className="mt-6 text-base text-foreground/75 max-w-sm leading-relaxed">
               You talk to the people doing the work. Every project is
@@ -43,7 +46,10 @@ export default function Founders() {
           <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border)] border border-[var(--border)] rounded-2xl overflow-hidden">
             {FOUNDERS.map((f) => (
               <article key={f.name} className="bg-background p-8 lg:p-10">
-                <div className="aspect-square bg-foreground rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                <div
+                  className="aspect-square rounded-xl flex items-center justify-center mb-6 relative overflow-hidden"
+                  style={{ background: "var(--brand-gradient)" }}
+                >
                   {f.photo ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
