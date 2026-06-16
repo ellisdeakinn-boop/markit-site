@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SERVICES = [
   {
@@ -146,6 +146,21 @@ type ServiceItem = (typeof SERVICES)[number];
 
 function ServiceCard({ s }: { s: ServiceItem }) {
   const [hover, setHover] = useState(false);
+  const tileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(hover: hover)").matches) return;
+    const el = tileRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setHover(entry.isIntersecting),
+      { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   const bg = hover ? s.hoverBg : s.bg;
   const invertText = hover ? (s.hoverInvert ?? s.invert) : s.invert;
   const textColor = invertText ? "text-white" : "text-black";
@@ -153,6 +168,7 @@ function ServiceCard({ s }: { s: ServiceItem }) {
   return (
     <article className="svc-card group bg-background relative overflow-hidden">
       <div
+        ref={tileRef}
         className="aspect-[5/4] relative overflow-hidden transition-colors duration-300 ease-out"
         style={{ backgroundColor: bg }}
         onMouseEnter={() => setHover(true)}

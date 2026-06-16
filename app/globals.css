@@ -21,6 +21,17 @@
   );
 }
 
+@custom-variant tap-active {
+  &:hover, &[data-tap-active="on"] {
+    @slot;
+  }
+}
+@custom-variant group-tap-active {
+  .group:hover &, .group[data-tap-active="on"] & {
+    @slot;
+  }
+}
+
 .cta-glow {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),

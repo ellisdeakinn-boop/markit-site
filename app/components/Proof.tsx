@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CountUp from "./CountUp";
+import { PartnerCard, CaseRow } from "./ProofItems";
 
 type Stat = {
   l: string;
@@ -38,7 +39,7 @@ const STATS: Stat[] = [
   },
 ];
 
-type Partner = {
+export type Partner = {
   name: string;
   slug?: string;
   logo?: string;
@@ -97,7 +98,7 @@ const PARTNERS: Partner[] = [
   { name: "The Send", slug: "youversion", logo: "/logos/the-send.svg" },
 ];
 
-type Case = {
+export type Case = {
   brand: string;
   slug?: string;
   result: string;
@@ -214,69 +215,9 @@ export default function Proof() {
         <div className="mt-16 lg:mt-24">
           <p className="eyebrow mb-8">Selected partners</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
-            {PARTNERS.map((p) => {
-              let inner: React.ReactNode;
-              if (p.logo && p.colorRender) {
-                inner = (
-                  <div className="relative w-full h-20 md:h-24 lg:h-28 flex items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={p.logo}
-                      alt={p.name}
-                      className="max-h-full max-w-[95%] object-contain opacity-85 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                );
-              } else if (p.logo) {
-                inner = (
-                  <div
-                    role="img"
-                    aria-label={p.name}
-                    className="w-full h-20 md:h-24 lg:h-28 bg-foreground transition-[background] duration-300 group-hover:[background-image:linear-gradient(120deg,#6eff3e_0%,#40bbff_50%,#0074ff_100%)]"
-                    style={{
-                      WebkitMaskImage: `url('${p.logo}')`,
-                      maskImage: `url('${p.logo}')`,
-                      WebkitMaskRepeat: "no-repeat",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskPosition: "center",
-                      maskPosition: "center",
-                      WebkitMaskSize: "contain",
-                      maskSize: "contain",
-                    }}
-                  />
-                );
-              } else {
-                inner = (
-                  <span className="font-serif text-xl md:text-2xl text-foreground/55 tracking-[-0.015em]">
-                    {p.name}
-                  </span>
-                );
-              }
-
-              const baseClass =
-                "group flex flex-col items-center justify-center text-center min-h-[140px] md:min-h-[180px]";
-
-              return p.slug ? (
-                <Link
-                  key={p.name}
-                  href={`/work/${p.slug}`}
-                  className={baseClass}
-                  title={p.name}
-                >
-                  {inner}
-                  <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--brand-blue)] opacity-0 group-hover:opacity-100 transition-opacity">
-                    {p.name} →
-                  </span>
-                </Link>
-              ) : (
-                <div key={p.name} className={baseClass} title={p.name}>
-                  {inner}
-                  <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-muted opacity-0 group-hover:opacity-100 transition-opacity">
-                    {p.name}
-                  </span>
-                </div>
-              );
-            })}
+            {PARTNERS.map((p) => (
+              <PartnerCard key={p.name} p={p} />
+            ))}
           </div>
           <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.08em] text-muted">
             Jordan · Adidas · Nike · Puma campaigns produced via Wish ATL. Clarks, GAP, Venum, Saint Potential, OnCloud, and OTX delivered as separate engagements.
@@ -284,50 +225,9 @@ export default function Proof() {
         </div>
 
         <div className="mt-16 lg:mt-24 border-t border-[var(--border)]">
-          {CASES.map((c) => {
-            const Inner = (
-              <>
-                <div className="md:col-span-4 flex items-baseline gap-3 flex-wrap">
-                  <p className="font-serif text-xl md:text-2xl tracking-[-0.015em] transition-colors group-hover:text-[var(--brand-blue)]">
-                    {c.brand}
-                  </p>
-                  {c.status === "CURRENT" && (
-                    <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-white bg-[var(--brand-blue)] rounded-full px-2 py-0.5">
-                      Current
-                    </span>
-                  )}
-                </div>
-                <p className="md:col-span-6 text-base md:text-lg text-foreground/80">
-                  {c.result}
-                </p>
-                <p className="md:col-span-2 font-mono text-[10px] uppercase tracking-[0.08em] text-muted md:text-right flex md:justify-end items-center gap-2">
-                  {c.discipline}
-                  {c.slug && (
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      →
-                    </span>
-                  )}
-                </p>
-              </>
-            );
-
-            return c.slug ? (
-              <Link
-                key={c.brand}
-                href={`/work/${c.slug}`}
-                className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 border-b border-[var(--border)] items-baseline hover:bg-[var(--brand-blue)]/[0.06] transition-colors"
-              >
-                {Inner}
-              </Link>
-            ) : (
-              <div
-                key={c.brand}
-                className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 border-b border-[var(--border)] items-baseline"
-              >
-                {Inner}
-              </div>
-            );
-          })}
+          {CASES.map((c) => (
+            <CaseRow key={c.brand} c={c} />
+          ))}
         </div>
       </div>
     </section>

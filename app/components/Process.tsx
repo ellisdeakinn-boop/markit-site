@@ -1,3 +1,5 @@
+import { ProcessStep } from "./ProcessStep";
+
 export default function Process() {
   return (
     <section id="process" className="bg-[var(--brand-blue)] text-white relative overflow-hidden">
@@ -47,20 +49,7 @@ export default function Process() {
                   d: "Weekly creative, copy, and CRO. Compounding returns.",
                 },
               ].map((step) => (
-                <div
-                  key={step.k}
-                  className="group bg-[var(--brand-blue)] p-6 transition-colors duration-300 hover:bg-black"
-                >
-                  <span className="inline-flex items-center justify-center w-9 h-9 bg-white text-[var(--brand-blue)] font-mono text-[12px] font-medium transition-colors group-hover:bg-[var(--brand-sky)] group-hover:text-white">
-                    {step.k}
-                  </span>
-                  <p className="font-serif text-xl mt-4 tracking-[-0.015em] text-white">
-                    {step.t}
-                  </p>
-                  <p className="text-sm text-white/80 mt-2 leading-relaxed">
-                    {step.d}
-                  </p>
-                </div>
+                <ProcessStep key={step.k} k={step.k} t={step.t} d={step.d} />
               ))}
             </div>
           </div>
