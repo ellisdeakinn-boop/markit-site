@@ -16,7 +16,7 @@ export function PillarCard({ p, i }: { p: Pillar; i: number }) {
   return (
     <div
       ref={ref}
-      className={`${TONES[i]} p-8 lg:p-10 flex flex-col justify-between min-h-[260px] transition-colors duration-300`}
+      className={`${TONES[i]} brand-ease p-8 lg:p-10 flex flex-col justify-between min-h-[260px]`}
     >
       <div className="flex items-center justify-between">
         <span className={`font-mono text-xs ${LABEL_TONES[i]}`}>{p.num}</span>

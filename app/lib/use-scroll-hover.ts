@@ -14,7 +14,7 @@ export function useScrollHover<T extends HTMLElement>() {
         if (entry.isIntersecting) el.setAttribute("data-tap-active", "on");
         else el.removeAttribute("data-tap-active");
       },
-      { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
+      { rootMargin: "-25% 0px -25% 0px", threshold: 0 }
     );
     obs.observe(el);
     return () => obs.disconnect();

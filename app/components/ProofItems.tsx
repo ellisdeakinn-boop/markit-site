@@ -16,7 +16,7 @@ export function PartnerCard({ p }: { p: Partner }) {
         <img
           src={p.logo}
           alt={p.name}
-          className="max-h-full max-w-[95%] object-contain opacity-85 group-tap-active:opacity-100 transition-opacity duration-300"
+          className="brand-ease max-h-full max-w-[95%] object-contain opacity-85 group-tap-active:opacity-100"
         />
       </div>
     );
@@ -25,7 +25,7 @@ export function PartnerCard({ p }: { p: Partner }) {
       <div
         role="img"
         aria-label={p.name}
-        className="w-full h-20 md:h-24 lg:h-28 bg-foreground transition-[background] duration-300 group-tap-active:[background-image:linear-gradient(120deg,#6eff3e_0%,#40bbff_50%,#0074ff_100%)]"
+        className="brand-ease w-full h-20 md:h-24 lg:h-28 bg-foreground group-tap-active:[background-image:linear-gradient(120deg,#6eff3e_0%,#40bbff_50%,#0074ff_100%)]"
         style={{
           WebkitMaskImage: `url('${p.logo}')`,
           maskImage: `url('${p.logo}')`,
@@ -52,14 +52,14 @@ export function PartnerCard({ p }: { p: Partner }) {
   return p.slug ? (
     <Link ref={ref} href={`/work/${p.slug}`} className={baseClass} title={p.name}>
       {inner}
-      <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--brand-blue)] opacity-0 group-tap-active:opacity-100 transition-opacity">
+      <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--brand-blue)] brand-ease opacity-0 group-tap-active:opacity-100">
         {p.name} →
       </span>
     </Link>
   ) : (
     <div ref={divRef} className={baseClass} title={p.name}>
       {inner}
-      <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-muted opacity-0 group-tap-active:opacity-100 transition-opacity">
+      <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-muted brand-ease opacity-0 group-tap-active:opacity-100">
         {p.name}
       </span>
     </div>
@@ -73,7 +73,7 @@ export function CaseRow({ c }: { c: Case }) {
   const Inner = (
     <>
       <div className="md:col-span-4 flex items-baseline gap-3 flex-wrap">
-        <p className="font-serif text-xl md:text-2xl tracking-[-0.015em] transition-colors group-tap-active:text-[var(--brand-blue)]">
+        <p className="brand-ease font-serif text-xl md:text-2xl tracking-[-0.015em] group-tap-active:text-[var(--brand-blue)]">
           {c.brand}
         </p>
         {c.status === "CURRENT" && (
@@ -88,7 +88,7 @@ export function CaseRow({ c }: { c: Case }) {
       <p className="md:col-span-2 font-mono text-[10px] uppercase tracking-[0.08em] text-muted md:text-right flex md:justify-end items-center gap-2">
         {c.discipline}
         {c.slug && (
-          <span className="opacity-0 group-tap-active:opacity-100 transition-opacity">
+          <span className="brand-ease opacity-0 group-tap-active:opacity-100">
             →
           </span>
         )}
@@ -100,7 +100,7 @@ export function CaseRow({ c }: { c: Case }) {
     <Link
       ref={linkRef}
       href={`/work/${c.slug}`}
-      className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 border-b border-[var(--border)] items-baseline tap-active:bg-[var(--brand-blue)]/[0.06] transition-colors"
+      className="group brand-ease grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 border-b border-[var(--border)] items-baseline tap-active:bg-[var(--brand-blue)]/[0.06]"
     >
       {Inner}
     </Link>

@@ -169,21 +169,21 @@ function ServiceCard({ s }: { s: ServiceItem }) {
     <article className="svc-card group bg-background relative overflow-hidden">
       <div
         ref={tileRef}
-        className="aspect-[5/4] relative overflow-hidden transition-colors duration-300 ease-out"
+        className="brand-ease aspect-[5/4] relative overflow-hidden"
         style={{ backgroundColor: bg }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
         <div className="absolute top-5 left-5 flex items-center gap-2">
           <span
-            className={`font-mono text-[11px] transition-colors ${
+            className={`font-mono text-[11px] brand-ease ${
               invertText ? "text-white/80" : "text-black/80"
             }`}
           >
             {s.code}
           </span>
           <span
-            className={`font-mono text-[11px] transition-colors ${
+            className={`font-mono text-[11px] brand-ease ${
               invertText ? "text-white/50" : "text-black/50"
             }`}
           >
@@ -195,7 +195,7 @@ function ServiceCard({ s }: { s: ServiceItem }) {
           aria-hidden
         >
           <div
-            className={`w-24 h-24 lg:w-28 lg:h-28 transition-colors duration-300 ${fillColor}`}
+            className={`brand-ease w-24 h-24 lg:w-28 lg:h-28 ${fillColor}`}
             style={{
               WebkitMaskImage: `url('${s.icon}')`,
               maskImage: `url('${s.icon}')`,
@@ -211,7 +211,7 @@ function ServiceCard({ s }: { s: ServiceItem }) {
 
         <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-7">
           <p
-            className={`font-serif uppercase text-4xl lg:text-5xl tracking-[-0.02em] transition-colors ${textColor}`}
+            className={`font-serif uppercase text-4xl lg:text-5xl tracking-[-0.02em] brand-ease ${textColor}`}
           >
             {s.name}
           </p>
