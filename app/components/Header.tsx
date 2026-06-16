@@ -60,10 +60,9 @@ export default function Header() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/brand/markit-mark.png"
+              src={onLight ? "/brand-v2/wordmark-black.png" : "/brand-v2/wordmark-white.png"}
               alt="Markit"
-              className="h-8 md:h-9 w-auto transition-[filter] duration-300"
-              style={onLight ? {} : { filter: "invert(1)" }}
+              className="h-5 md:h-6 w-auto transition-opacity duration-300"
             />
           </a>
 
@@ -90,8 +89,8 @@ export default function Header() {
             href="/#book"
             className={`hidden md:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors ${
               onLight
-                ? "bg-foreground text-background hover:opacity-90"
-                : "border border-white/40 text-white hover:bg-white hover:text-foreground"
+                ? "bg-[var(--brand-blue)] text-white hover:opacity-90"
+                : "border border-white/50 text-white hover:bg-white hover:text-[var(--brand-blue)]"
             }`}
           >
             Book a call
@@ -162,7 +161,7 @@ export default function Header() {
           <a
             href="/#book"
             onClick={() => setMenuOpen(false)}
-            className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-5 py-4 text-base transition-all duration-500 ${
+            className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand-blue)] text-white px-5 py-4 text-base transition-all duration-500 ${
               menuOpen
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-3"

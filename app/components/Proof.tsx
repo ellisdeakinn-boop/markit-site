@@ -192,7 +192,7 @@ export default function Proof() {
                 prefix={s.count.prefix}
                 suffix={s.count.suffix}
                 decimals={s.count.decimals}
-                className="font-serif text-3xl md:text-5xl tracking-[-0.025em] tabular-nums block"
+                className="font-serif text-3xl md:text-5xl tracking-[-0.025em] tabular-nums block text-[var(--brand-blue)]"
               />
               <p className="text-xs text-muted mt-3 leading-snug">{s.l}</p>
               <p className="font-mono text-[10px] text-foreground/60 mt-4 uppercase tracking-[0.08em]">

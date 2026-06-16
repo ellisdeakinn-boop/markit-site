@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 const CALENDLY_URL =
-  "https://calendly.com/d/cyvj-yx9-mz5/markit-service-enquiry?primary_color=000000";
+  "https://calendly.com/d/cyvj-yx9-mz5/markit-service-enquiry?primary_color=0074ff";
 
 export default function Booking() {
   useEffect(() => {
@@ -21,12 +21,14 @@ export default function Booking() {
   return (
     <section
       id="book"
-      className="bg-foreground text-background"
+      className="relative text-white overflow-hidden"
+      style={{ background: "var(--brand-gradient)" }}
     >
-      <div className="mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-28 lg:pb-48">
+      <div className="absolute inset-0 bg-[var(--brand-blue)]/40 mix-blend-multiply pointer-events-none" />
+      <div className="relative z-10 mx-auto max-w-[1480px] px-6 lg:px-10 py-20 lg:py-28 lg:pb-48">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-12 lg:mb-16">
           <div className="md:col-span-5">
-            <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-background/50">
+            <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/70">
               Book a call / 05
             </p>
             <h2 className="font-serif uppercase text-4xl md:text-6xl leading-[1.05] tracking-[-0.02em] mt-3">
@@ -34,12 +36,12 @@ export default function Booking() {
             </h2>
           </div>
           <div className="md:col-span-7 md:col-start-6">
-            <p className="text-base md:text-lg leading-relaxed text-background/80 max-w-xl">
+            <p className="text-base md:text-lg leading-relaxed text-white/85 max-w-xl">
               Pick a time that works. We&apos;ll come prepared with notes on
               your current marketing, where the gaps are, and what we&apos;d
               do in the first 30 days.
             </p>
-            <p className="text-sm text-background/60 mt-4">
+            <p className="text-sm text-white/70 mt-4">
               Calls run with Ellis or Shema. No SDRs, no qualifying questions
               from a stranger.
             </p>

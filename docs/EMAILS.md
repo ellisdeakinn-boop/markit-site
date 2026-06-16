@@ -235,20 +235,20 @@ Ellis
 
 ## CRM 07. Case study breakdown (T + 72 hours)
 
-**Subject:** How Pocket Dispo hit 21M views with one shoot
+**Subject:** How one video did 21M views with no ad spend
 
 ```
 {{first_name}},
 
 The Pocket Dispo number gets quoted on the site. Worth knowing how it actually happened so you can judge whether the same thinking applies to your business.
 
-The setup. Pocket Dispo wanted a single piece of brand-deal content to push their product. Most agencies would have produced one polished spot. We produced one polished spot plus 14 cut-downs in different formats designed for different platforms and different hooks.
+The setup. Pocket Dispo wanted brand-deal content to push their product. We made one video. Organic. No paid budget behind it.
 
-The shoot. One day of capture. Multiple angles, multiple wardrobes, multiple delivery variations of the core script. The setup looked expensive on the day. On the back end, every cut-down came from the same shoot, so the unit cost per piece of content dropped dramatically.
+The result. It did 21 million views on its own. No ad spend. That only happens when the creative itself is strong enough to earn the attention.
 
-The release. We did not just upload and hope. We tested 4 hook variations as standalone shorts in the first 48 hours, watched the data, then weighted distribution toward the variation pulling the highest watch-time. The 21M views came from one variation that broke through. The other three did fine. One did exceptional.
+Why it matters. The hardest part of marketing is not the ad account. It is making content good enough that people actually stop and watch. Most agencies can run a campaign. Very few can make the thing worth running. When the creative is right, organic carries it, and paid pours fuel on a fire that is already lit.
 
-How this maps to a local service business. You don't need 14 variations or 21M views. You need 4-6 variations of one shoot, each speaking to a different segment of your local market, each tested in your local feed for two weeks, then weighting paid spend toward the one that works. Same methodology, smaller scale, faster results.
+How this maps to a local service business. You don't need 21M views. You need content about your business that is genuinely worth watching, made consistently, then a paid engine behind the pieces that land. Creative first, distribution second. Most people do it backwards and wonder why their ads don't work.
 
 That's the engine we build. The call is where we figure out what your version of this looks like.
 

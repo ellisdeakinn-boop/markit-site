@@ -14,7 +14,8 @@ export default async function OG() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0a0a0a",
+          background:
+            "linear-gradient(120deg, #6eff3e 0%, #40bbff 50%, #0074ff 100%)",
           color: "#ffffff",
           padding: "72px 80px",
           fontFamily: "system-ui, sans-serif",
@@ -27,7 +28,7 @@ export default async function OG() {
             alignItems: "center",
             fontSize: 22,
             letterSpacing: 2,
-            opacity: 0.6,
+            opacity: 0.85,
           }}
         >
           <span>MARKIT®</span>
@@ -55,11 +56,11 @@ export default async function OG() {
             alignItems: "center",
             fontSize: 22,
             letterSpacing: 2,
-            opacity: 0.6,
+            opacity: 0.85,
           }}
         >
           <span>ARIZONA · IN-HOUSE STUDIO</span>
-          <span>MARKIT.STUDIO</span>
+          <span>MARKITING.AGENCY</span>
         </div>
       </div>
     ),

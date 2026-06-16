@@ -40,9 +40,9 @@ export default function Footer() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/markit-logo.png"
+                src="/brand-v2/wordmark-black.png"
                 alt="Markit"
-                className="h-32 md:h-40 w-auto"
+                className="h-10 md:h-12 w-auto"
               />
             </Link>
             <p className="mt-6 max-w-md text-foreground/75 leading-relaxed">
@@ -51,8 +51,9 @@ export default function Footer() {
             </p>
             <Link
               href="/#book"
-              className="mt-6 inline-block font-serif text-2xl hover-underline tracking-[-0.02em]"
+              className="mt-6 inline-flex items-center gap-2 font-serif text-2xl hover-underline tracking-[-0.02em]"
             >
+              <span className="inline-block w-2 h-2 bg-[var(--brand-blue)] rounded-full" aria-hidden />
               Book a call →
             </Link>
           </div>

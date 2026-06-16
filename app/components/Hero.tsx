@@ -7,9 +7,9 @@ const POSTER_SRC = "/hero-poster.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-foreground text-white border-b-0">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f10] via-[#1c1c20] to-[#0a0a0a]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_30%,rgba(255,255,255,0.08),transparent_60%)]" />
+    <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-[var(--brand-blue)] text-white border-b-0">
+      <div className="absolute inset-0" style={{ background: "var(--brand-gradient)" }} />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_30%,rgba(255,255,255,0.18),transparent_60%)]" />
 
       <video
         autoPlay
@@ -29,8 +29,9 @@ export default function Hero() {
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
 
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[var(--brand-blue)]/30 mix-blend-multiply pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/40 via-black/15 to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[var(--brand-blue)]/85 via-[var(--brand-blue)]/35 to-transparent pointer-events-none" />
 
       <div className="relative z-10 h-full flex flex-col">
         <div className="mx-auto w-full max-w-[1480px] px-6 lg:px-10 pt-28 lg:pt-32 flex items-center justify-between">
@@ -48,14 +49,18 @@ export default function Hero() {
             fill calendars, and book walk-ins.
           </h1>
 
-          <div className="mt-6 lg:mt-8">
+          <div className="mt-6 lg:mt-8 flex items-center gap-3">
             <MagneticButton
               href="#book"
-              className="inline-flex items-center gap-2 rounded-full bg-white text-foreground px-5 py-3 text-sm hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-white text-[var(--brand-blue)] px-5 py-3 text-sm font-medium hover:opacity-90"
             >
               Work with us
               <span aria-hidden>→</span>
             </MagneticButton>
+            <span
+              aria-hidden
+              className="hidden sm:inline-block w-2 h-2 bg-[var(--brand-lime)]"
+            />
           </div>
         </div>
 
