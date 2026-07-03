@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { StickyBookCTA } from "./components/StickyBookCTA";
+import ChromeGate from "./components/ChromeGate";
 import SmoothScroll from "./components/SmoothScroll";
 import ScrollBlurController from "./components/ScrollBlurController";
 import SectionReveal from "./components/SectionReveal";
@@ -60,7 +61,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} / Beyond Marketing`,
     description: SITE_DESCRIPTION,
-    creator: "@markitstudio",
   },
   robots: {
     index: true,
@@ -107,10 +107,14 @@ export default function RootLayout({
         <SmoothScroll />
         <ScrollBlurController />
         <SectionReveal />
-        <Header />
+        <ChromeGate>
+          <Header />
+        </ChromeGate>
         <main className="flex flex-col flex-1 w-full">{children}</main>
-        <Footer />
-        <StickyBookCTA />
+        <ChromeGate>
+          <Footer />
+          <StickyBookCTA />
+        </ChromeGate>
       </body>
     </html>
   );

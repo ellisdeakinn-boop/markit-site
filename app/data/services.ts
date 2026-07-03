@@ -4,6 +4,10 @@ export type Service = {
   name: string;
   tag: "SPECIALTY" | "LEAD" | "SYSTEM" | "WORDS" | "BY REQUEST";
   tagline: string;
+  // Search-facing title and description. seoTitle renders through the
+  // "%s / Markit" template, so keep it under ~45 chars and keyword-first.
+  seoTitle: string;
+  seoDescription: string;
   intro: string;
   whatWeDo: string[];
   process: { title: string; description: string }[];
@@ -19,6 +23,9 @@ export const SERVICES: Service[] = [
     tag: "SPECIALTY",
     tagline:
       "Campaign management and creative production under one roof. Meta is home turf. Google when the channel fits.",
+    seoTitle: "Paid Ads Agency in Arizona",
+    seoDescription:
+      "Meta and Google ads run by the same in-house team that makes the creative. Weekly creative testing and reporting tied to revenue, not vanity metrics.",
     intro:
       "Most agencies split media buying from creative production. We don't. The same team that scripts and shoots the ad runs the campaign that distributes it. Faster iteration, fewer hand-offs, and creative tied directly to what the spend is doing.",
     whatWeDo: [
@@ -61,6 +68,9 @@ export const SERVICES: Service[] = [
     tag: "SPECIALTY",
     tagline:
       "Custom code in Next.js and React. No themes, no page builders, no templates.",
+    seoTitle: "Website Design and Build Agency in Arizona",
+    seoDescription:
+      "Custom Next.js and React marketing sites built to convert. No themes, no page builders. On-page SEO, Core Web Vitals, and booking flows built in from day one.",
     intro:
       "Your website is the single asset your ads, content, and word-of-mouth all point to. We treat it like a conversion machine, not a brochure. Built from scratch in modern code, engineered for performance, ranked from day one.",
     whatWeDo: [
@@ -98,6 +108,9 @@ export const SERVICES: Service[] = [
     tag: "LEAD",
     tagline:
       "On-location, in-studio, UGC casting, or post-only from your footage. The goal is revenue through views, not views for views' sake.",
+    seoTitle: "Video Production Agency in Arizona",
+    seoDescription:
+      "On-location shoots, in-studio capture, UGC casting, and editing under one roof. Video built to drive revenue, including a commercial that pulled 21 million views.",
     intro:
       "We own our gear, run our own edit team, and have produced everything from a single brand-deal commercial that pulled 21 million views to a 15-creative campaign with a professional boxer. Every shoot is built around what the business needs to grow, not just what looks good on a reel.",
     whatWeDo: [
@@ -140,6 +153,9 @@ export const SERVICES: Service[] = [
     tag: "SYSTEM",
     tagline:
       "Whatever CRM you run, we wire it up. No CRM, we deploy GoHighLevel.",
+    seoTitle: "Lead Generation Agency in Arizona",
+    seoDescription:
+      "We build the system that turns clicks into booked calls, sales, and walk-ins. CRM setup, automated follow-up, missed-call recovery, and reputation in one pipeline.",
     intro:
       "Leads are only valuable when they make it to a calendar, a cart, or a counter. We build the plumbing that turns clicks into booked calls, sales, and walk-ins: intake, automated follow-up, reputation, and missed-call recovery, all in one system.",
     whatWeDo: [
@@ -177,6 +193,9 @@ export const SERVICES: Service[] = [
     tag: "WORDS",
     tagline:
       "Direct-response copy with taste. Pages, ads, emails, and SMS that move money.",
+    seoTitle: "Direct Response Copywriting Services",
+    seoDescription:
+      "Landing pages, VSL scripts, ads, emails, and SMS that move money. Direct response copy with taste, tested against the business outcome every time.",
     intro:
       "Words are how you sell when no one is in the room. We write copy that earns attention and converts it, without sounding like a 2010 sales letter or a corporate brochure. Every line is tested against the business outcome.",
     whatWeDo: [
@@ -213,6 +232,9 @@ export const SERVICES: Service[] = [
     tag: "BY REQUEST",
     tagline:
       "Always-on content that compounds attention. Offered for clients who genuinely need it.",
+    seoTitle: "Social Media Management in Arizona",
+    seoDescription:
+      "Always-on content that compounds attention. Strategy-led, produced in-house, and tied to the same revenue numbers as the ad account.",
     intro:
       "We don't push social as a default deliverable. When a brand needs constant content presence, we take it on like everything else: in-house, strategy-led, and tied to the same revenue numbers as the ad account.",
     whatWeDo: [

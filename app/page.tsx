@@ -10,7 +10,7 @@ import Founders from "./components/Founders";
 import Booking from "./components/Booking";
 
 export const metadata: Metadata = {
-  title: "Markit / Beyond Marketing",
+  title: "Markit / Marketing Agency in Arizona",
   description:
     "Markit is the in-house marketing engine that turns attention into revenue. Paid ads, websites, video, lead generation, and copy. Arizona-based, Meta-first, six in-house disciplines. Built for businesses with an offer worth scaling.",
   alternates: { canonical: "/" },

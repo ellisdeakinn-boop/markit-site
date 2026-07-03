@@ -24,8 +24,8 @@ export async function generateMetadata({
   const path = `/services/${service.slug}`;
   const ogTitle = `${service.name} / Markit`;
   return {
-    title: service.name,
-    description: service.tagline,
+    title: service.seoTitle,
+    description: service.seoDescription,
     alternates: { canonical: path },
     openGraph: {
       title: ogTitle,

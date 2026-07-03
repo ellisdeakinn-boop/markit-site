@@ -1,0 +1,23 @@
+# Markit
+
+> Markit is an Arizona-based marketing agency that builds the full marketing engine in-house: paid ads, website builds, video production, lead generation, copywriting, and social media. One team handles strategy, creative, and media buying, so the people who make the ads are the same people running the spend. Built for businesses with an offer worth scaling.
+
+Founded and run by Ellis Deakin (Chief of Operations) and Shema Kamau (Chief of Production). Clients work directly with the founders for the entire engagement. Nothing is outsourced.
+
+## Services
+
+- [Paid Ads](https://markiting.agency/services/paid-ads): Meta and Google campaign management with creative production under the same roof. Weekly creative testing tied to spend and revenue.
+- [Website Builds](https://markiting.agency/services/website-builds): Custom Next.js and React marketing sites. No themes or page builders. SEO and Core Web Vitals built in.
+- [Video Production](https://markiting.agency/services/video-production): On-location, in-studio, UGC casting, and post-production. Video built to drive revenue, not vanity views.
+- [Lead Generation](https://markiting.agency/services/lead-generation): CRM setup, automated follow-up, missed-call recovery, and reputation management wired into one pipeline.
+- [Copywriting](https://markiting.agency/services/copywriting): Direct response copy for landing pages, VSLs, ads, emails, and SMS.
+- [Social Media](https://markiting.agency/services/social-media): Always-on content programs for clients who genuinely need them, tied to the same revenue numbers as the ad account.
+
+## Work
+
+- [Client work and case studies](https://markiting.agency/#work): Selected projects including a brand-deal commercial that pulled 21 million views and a 15-creative campaign for a professional boxer.
+
+## Contact
+
+- Email: hello@markiting.agency
+- Book a call: https://markiting.agency/
