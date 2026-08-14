@@ -10,7 +10,7 @@ export const DONE4U_CONTENT = `
 <header class="masthead">
   <div class="wrap">
     <img class="logo" src="/brand-v2/wordmark-black.png" alt="Markit">
-    <p class="eyebrow">Prepared for Jake Peters and Reid Seddon</p>
+    <p class="d4u-kicker">Prepared for Jake Peters and Reid Seddon</p>
     <h1>Webinar Agreement<br>and Build Intake</h1>
     <p class="lede">Everything for the 3 September webinar in one place. Part one is the agreement, which is the bit to read first. Part two is what we need from you to build it.</p>
     <div class="partmeta">
@@ -92,7 +92,7 @@ export const DONE4U_CONTENT = `
     <p style="color:var(--text-soft);margin:0">Of everything this webinar generates. Paid within 7 days of the money landing.</p>
   </div>
 
-  <h4 style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-faint);margin:2rem 0 0.85rem">What the 15% attaches to</h4>
+  <h4 class="subhead">What the 15% attaches to</h4>
 
   <p><strong>15% of every dollar Done4U collects from anyone who bought as a result of this webinar.</strong> Cash collected, not contract value, so nothing is owed on a sale until the money actually lands.</p>
 

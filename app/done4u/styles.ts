@@ -28,6 +28,8 @@ export const DONE4U_STYLES = `
   --d4u-alert:  #b3320f;
   --d4u-alt-bg: #fdeee9;
 
+  /* Loud: Done4U's own headline face. Quiet: Markit's Geist. */
+  --d4u-display: var(--font-outfit), var(--font-sans), ui-sans-serif, sans-serif;
   --d4u-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --d4u-mono: var(--font-mono), ui-monospace, monospace;
   --d4u-measure: 35rem;
@@ -55,13 +57,12 @@ export const DONE4U_STYLES = `
 
 .d4u .logo { height: 26px; width: auto; display: block; margin-bottom: 2.25rem; }
 
-.d4u .eyebrow {
-  font-family: var(--d4u-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.d4u .d4u-kicker {
+  font-family: var(--d4u-display);
+  font-size: 0.95rem;
+  font-weight: 500;
   margin: 0 0 1rem;
-  opacity: 0.72;
+  opacity: 0.75;
 }
 
 .d4u h1 {
@@ -71,7 +72,7 @@ export const DONE4U_STYLES = `
   font-weight: 800;
   text-wrap: balance;
   margin: 0 0 1.1rem;
-  font-family: var(--d4u-sans);
+  font-family: var(--d4u-display);
   color: inherit;
 }
 
@@ -100,12 +101,12 @@ export const DONE4U_STYLES = `
 .d4u .part:first-of-type { margin-top: 0; }
 
 .d4u .part-label {
-  font-family: var(--d4u-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--d4u-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0;
   color: var(--d4u-accent);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
 }
 
 .d4u .part h2 {
@@ -114,7 +115,7 @@ export const DONE4U_STYLES = `
   font-weight: 800;
   margin: 0;
   text-wrap: balance;
-  font-family: var(--d4u-sans);
+  font-family: var(--d4u-display);
   color: inherit;
 }
 
@@ -146,7 +147,7 @@ export const DONE4U_STYLES = `
   font-weight: 700;
   margin: 0;
   text-wrap: balance;
-  font-family: var(--d4u-sans);
+  font-family: var(--d4u-display);
   color: inherit;
 }
 
@@ -234,19 +235,28 @@ export const DONE4U_STYLES = `
 }
 
 .d4u .panel h4 {
-  font-family: var(--d4u-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--d4u-faint);
+  font-family: var(--d4u-display);
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: var(--d4u-text);
   margin: 0 0 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.d4u .subhead {
+  font-family: var(--d4u-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--d4u-text);
+  margin: 2rem 0 0.85rem;
 }
 
 .d4u .panel.hero { border-color: var(--d4u-accent); border-width: 2px; }
 
 .d4u .money {
-  font-size: 1.6rem;
+  font-family: var(--d4u-display);
+  font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
@@ -260,9 +270,8 @@ export const DONE4U_STYLES = `
 .d4u .swatches { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.4rem; }
 .d4u .swatch { flex: 1 1 7rem; }
 .d4u .swatch span {
-  display: block; font-family: var(--d4u-mono); font-size: 0.68rem;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--d4u-faint); margin-bottom: 0.45rem;
+  display: block; font-family: var(--d4u-display); font-size: 0.85rem;
+  font-weight: 600; color: var(--d4u-soft); margin-bottom: 0.45rem;
 }
 .d4u .swatch div {
   height: 2.6rem; border: 1px solid var(--d4u-rule);

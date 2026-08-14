@@ -1,6 +1,20 @@
 import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
 import { DONE4U_CONTENT } from "./content";
 import { DONE4U_STYLES } from "./styles";
+
+// Outfit is Done4U's own headline face — it sets the hero on their landing page
+// at maxed.vip. Using it for the display type here means the document is
+// co-branded through the typography itself: Jake's face on the headings, Markit's
+// Geist on the body. Loud over quiet, one of each, per the house pairing rule.
+//
+// next/font scopes a font to the component that uses it, so this loads on
+// /done4u only and never reaches the rest of markiting.agency.
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
 
 // Client-facing document for Done4U (Jake Peters + Reid Seddon): the webinar
 // agreement plus the build intake, on one page.
@@ -21,7 +35,10 @@ export default function Done4UPage() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: DONE4U_STYLES }} />
-      <div className="d4u" dangerouslySetInnerHTML={{ __html: DONE4U_CONTENT }} />
+      <div
+        className={`d4u ${outfit.variable}`}
+        dangerouslySetInnerHTML={{ __html: DONE4U_CONTENT }}
+      />
     </>
   );
 }
