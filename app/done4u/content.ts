@@ -117,7 +117,7 @@ export const DONE4U_CONTENT = `
   <div class="sec-head"><span class="sec-num">4</span><h3>The guarantee</h3></div>
 
   <div class="panel hero">
-    <p style="font-weight:700;font-size:1.05rem;margin-bottom:0.75rem">If this webinar has not generated $20,000 USD in revenue within 14 days of the webinar date, the $2,000 USD setup fee is refunded in full.</p>
+    <p style="font-weight:700;font-size:1.05rem;margin-bottom:0.75rem">If this webinar has not generated $30,000 USD in revenue within 14 days of the webinar date, the $2,000 USD setup fee is refunded in full.</p>
     <p style="color:var(--text-soft);margin:0"><strong>Assessment date: 17 September 2026.</strong> By then every sales call from the webinar has happened, so the number is real rather than half-counted.</p>
   </div>
 
