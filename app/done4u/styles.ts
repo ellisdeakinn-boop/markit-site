@@ -162,17 +162,104 @@ export const DONE4U_STYLES = `
 .d4u .q > p { margin: 0 0 0.65rem; font-weight: 600; }
 .d4u .q .hint { font-weight: 400; color: var(--d4u-soft); }
 
-.d4u .field {
+.d4u textarea.field {
+  display: block;
+  width: 100%;
   background: var(--d4u-field);
-  border: 1px solid var(--d4u-rule-2);
+  border: 1px solid var(--d4u-rule);
   border-radius: 3px;
-  height: 5.25rem;
+  padding: 0.55rem 0.7rem;
+  font-family: var(--d4u-sans);
+  font-size: 1rem;
+  line-height: 1.74rem;
+  color: var(--d4u-text);
+  resize: vertical;
+  min-height: 3.5rem;
+  /* The ruled lines are the point: it should read as something you write on. */
   background-image: repeating-linear-gradient(
     to bottom, transparent 0, transparent 1.74rem,
     var(--d4u-rule) 1.74rem, var(--d4u-rule) calc(1.74rem + 1px));
+  background-position: 0 0.55rem;
 }
-.d4u .field.tall { height: 10.5rem; }
-.d4u .field.short { height: 3.5rem; }
+.d4u textarea.field:focus {
+  outline: none;
+  border-color: var(--d4u-accent);
+  box-shadow: 0 0 0 3px var(--d4u-acc-bg);
+  background-color: var(--d4u-paper);
+}
+
+.d4u input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--d4u-accent);
+  cursor: pointer;
+  margin: 0;
+}
+
+.d4u .swatch-in {
+  display: block;
+  width: 100%;
+  height: 2.6rem;
+  border: 1px solid var(--d4u-rule);
+  border-radius: 3px;
+  background: var(--d4u-field);
+  padding: 0 0.7rem;
+  font-family: var(--d4u-mono);
+  font-size: 0.95rem;
+  color: var(--d4u-text);
+}
+.d4u .swatch-in:focus {
+  outline: none;
+  border-color: var(--d4u-accent);
+  box-shadow: 0 0 0 3px var(--d4u-acc-bg);
+}
+
+/* ---------- save bar + actions ---------- */
+
+.d4u .savebar {
+  background: var(--d4u-acc-bg);
+  border: 1px solid var(--d4u-accent);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.93rem;
+  color: var(--d4u-text);
+}
+
+.d4u .d4u-actions {
+  position: sticky;
+  bottom: 0;
+  background: var(--d4u-paper);
+  border-top: 2px solid var(--d4u-accent);
+  padding: 0.85rem 0 1rem;
+  margin-top: 3rem;
+}
+
+.d4u .d4u-status {
+  margin: 0 0 0.6rem;
+  font-size: 0.88rem;
+  color: var(--d4u-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+}
+.d4u .d4u-count { color: var(--d4u-faint); }
+
+.d4u .d4u-btns { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.d4u .d4u-btns button {
+  font-family: var(--d4u-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  border-radius: 4px;
+  border: 1px solid var(--d4u-accent);
+  background: var(--d4u-accent);
+  color: #fff;
+  cursor: pointer;
+}
+.d4u .d4u-btns button.ghost { background: transparent; color: var(--d4u-accent); }
+.d4u .d4u-btns button[disabled] { opacity: 0.55; cursor: default; }
 
 /* ---------- notes ---------- */
 
